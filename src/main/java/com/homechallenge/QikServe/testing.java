@@ -44,12 +44,7 @@ public class testing {
 		//show the details:
 		sp.Details();
 		//sp.ApplyingPromos(cartItems);
-		Scanner sc = new Scanner(System.in);
-		while("exit" != null) {
-			System.out.println("Select the product to buy!");
-			System.out.println(products);
-			
-		}
+		
 		
 		
 	
