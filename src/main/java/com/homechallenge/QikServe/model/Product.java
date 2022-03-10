@@ -48,7 +48,7 @@ public class Product {
 	
 
 	public BigDecimal getPrice() {
-		return price.divide(new BigDecimal(100));
+		return price.divide(new BigDecimal(100)); //Transforming pennies to Dolars
 	}
 
 	public void setPrice(BigDecimal price) {

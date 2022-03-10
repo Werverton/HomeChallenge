@@ -3,7 +3,7 @@ package com.homechallenge.QikServe.model;
 
 public class Promotion {
 	String id;
-	String type;
+	TypePromotion type;
 	int required_qty;
 	int amount;
 	int free_qty;
@@ -14,14 +14,14 @@ public class Promotion {
 	
 	//contrutor da salada
 	
-	public Promotion(String id, String type, int amount) {
+	public Promotion(String id, TypePromotion type, int amount) {
 		this.id = id;
 		this.type = type;
 		this.amount = amount;
 	}
 	
 	//contrutor da pizza
-	public Promotion(String id, String type, int required_qty, Double price) {
+	public Promotion(String id, TypePromotion type, int required_qty, Double price) {
 		this.id = id;
 		this.type = type;
 		this.required_qty = required_qty;
@@ -30,7 +30,7 @@ public class Promotion {
 	
 	
 	//construtor do hamburguer
-	public Promotion(String id, String type, int required_qty, int free_qty) {
+	public Promotion(String id, TypePromotion type, int required_qty, int free_qty) {
 		this.id = id;
 		this.type = type;
 		this.required_qty = required_qty;
@@ -45,10 +45,10 @@ public class Promotion {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	public TypePromotion getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(TypePromotion type) {
 		this.type = type;
 	}
 	public int getRequired_qty() {

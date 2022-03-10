@@ -8,29 +8,64 @@ public class ShoppingCartItem {
 	
 	private final int quantity;
     private final Product product;
+    Promotion promotion;
     
     public ShoppingCartItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }
+    
+    
+    
+    
 
 	
-    public int getQuantity() {
+    public Promotion getPromotion() {
+		return promotion;
+	}
+
+
+	public void setPromotion(Promotion promotion) {
+		this.promotion = promotion;
+	}
+
+	public int getQuantity() {
 		return quantity;
 	}
 	public Product getProduct() {
 		return product;
 	}
-	
+	//Total per item before any promotion
 	 public BigDecimal totalPrice() {
 		
 	     return BigDecimal.valueOf(quantity * product.getPrice().doubleValue());
 	 }
 	 
-	 public BigDecimal totalPriceAfterPromo() {
-		return null;
+	 //applying flat_percent
+	 public BigDecimal totalPriceFlatPercent() {
+		System.out.println("Promotion Applied: "+TypePromotion.FLAT_PERCENT +" applied");	
+		 double discount = (totalPrice().doubleValue() * 1.10) - totalPrice().doubleValue();
+			
+	     return BigDecimal.valueOf(totalPrice().doubleValue() - discount);
+	 }
+	 
+	 
+	 //applying qty_based_price_override
+	 public BigDecimal totalPromoQtyOvrPrice() {
+		 System.out.println("Promotion Applied: "+ TypePromotion.QTY_BASED_PRICE_OVERRIDE);
+		 //set to this price 8,995
+		 
+		 
+		 return BigDecimal.valueOf(8.995 * quantity);
+		
 		 
 	 }
+	 
+	 public String totalPromoBuyXgetYfree() {
+		 System.out.println("Promotion Applied: " + TypePromotion.BUY_X_GET_Y_FREE);
+		 return "you got a third one free";
+	 }
+	 
 
 
 	@Override
@@ -41,7 +76,7 @@ public class ShoppingCartItem {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(product, quantity);
+		return Objects.hash(product, promotion, quantity);
 	}
 
 
@@ -54,7 +89,8 @@ public class ShoppingCartItem {
 		if (getClass() != obj.getClass())
 			return false;
 		ShoppingCartItem other = (ShoppingCartItem) obj;
-		return Objects.equals(product, other.product) && quantity == other.quantity;
+		return Objects.equals(product, other.product) && Objects.equals(promotion, other.promotion)
+				&& quantity == other.quantity;
 	}
 	
 	 

@@ -10,6 +10,8 @@ import static java.math.BigDecimal.valueOf;
 
 public class ShoppingCart {
 	//private ShoppingCart shoppingCart;
+	
+	private BigDecimal totalCart;
 	private List<ShoppingCartItem> items = new ArrayList<>();
 	
 	
@@ -42,22 +44,20 @@ public class ShoppingCart {
 					.orElse(0);
 	}
 	
-	//item.getProduct().getPromotions().get(0).getType()
-	public void applyPromoPrice(List<ShoppingCartItem> items) {
-		items.stream().filter(i -> i.getProduct().getPromotions().get(0).getType() == "FLAT_PERCENT").forEach(i-> System.out.println("tem desconto"));
-	}
-
-	/*
-	public void setShoppingCart(ShoppingCart shoppingCart) {
-		this.shoppingCart = shoppingCart;
-	}*/
+	
 
 	public List<ShoppingCartItem> getItems() {
 		return items;
 	}
-	
 
+	public void setTotalWithPromo(BigDecimal priceBeforePromo, BigDecimal discount) {
+		BigDecimal valueDiscount = valueOf(priceBeforePromo.doubleValue() - discount.doubleValue());
+		totalCart = valueOf(total().doubleValue() - valueDiscount.doubleValue());
+	}
 	
+	public BigDecimal getTotalShoppingCart() {
+		return totalCart;
+	}
 
 	
 }
