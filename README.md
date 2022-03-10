@@ -6,20 +6,18 @@ HomeChallenge
 
 .First you need to run the wiremock api to the project be capable of consume the data.
 
-.The file testing.java in the root has some tests.
-
-
+.To run the program you have to run Cliinterface.java located at the root of the project.
 
 
 
 
 #1. How long did you spend on the test?
 
-I Spent three days.
+I Spent five days.
 
 #2. What would you add if you had more time?
 
-I would add the cli interface to user can interact or a web interface with react.js.
+I would add a RESTFul routes and a web interface with react.js .
 
 #3. How would you improve the product APIs that you had to consume?
 
