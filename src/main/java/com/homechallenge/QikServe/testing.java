@@ -23,24 +23,7 @@ public class testing {
 		Product p4 = Consuming.findById(products.get(3).getId()); //Boring Fries
 
 		ShoppingController sp = new ShoppingController();
-/*
-		sp.addItem(p4, 3);
-		sp.addItem(p3, 2);
-		sp.addItem(p2, 5);
-		sp.addItem(p1, 4);*/
-		//System.out.println(sp.hasPromo());
 
-		//System.out.println(sp.ApplyingPromos());
-		//cartItems = sp.listItems();
-
-		//show the details:
-		
-		
-		
-		//sp.Details();
-		//sp.ApplyingPromos(cartItems);
-		
-		
 	
 		
 		System.out.println("Select one of the products!");
