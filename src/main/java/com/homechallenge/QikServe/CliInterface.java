@@ -11,7 +11,7 @@ import com.homechallenge.QikServe.controller.ShoppingController;
 import com.homechallenge.QikServe.model.Product;
 
 
-public class testing {
+public class CliInterface {
 
 	public static void main(String[] args) throws IOException {
 		List<Product> products = new ArrayList<Product>(Consuming.findAll()); //instantiate the list of products
@@ -34,9 +34,7 @@ public class testing {
 			System.out.println("Press d to select Boring Fries!");
 			System.out.println("Press q to exit");
 			System.out.println("Press E to checkout");
-			//System.out.println("Amazing Salad selected");
-			//System.out.println("Boring Fries selected");
-			//System.out.println("Type 100 to exit");
+			
 			String pick;
 			
 			do {
@@ -58,24 +56,24 @@ public class testing {
 					break;
 				case "b":
 					System.out.println("Amazing Burger selected");
-					System.out.println("How many?");
+					System.out.println("How many?: ");
 					qty = scan.nextInt();
 					sp.addItem(p2, qty);
 					break;
 				case "c":
 					System.out.println("Amazing Salad selected");
-					System.out.println("How many?");
+					System.out.println("How many?: ");
 					qty = scan.nextInt();
 					sp.addItem(p3, qty);
 					break;
 				case "d":
 					System.out.println("Boring Fries selected");
-					System.out.println("How many?");
+					System.out.println("How many?: ");
 					qty = scan.nextInt();
 					sp.addItem(p4, qty);
 					break;
 					
-				case "e":
+				case "E":
 					sp.Details();
 
 				}
