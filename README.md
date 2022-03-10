@@ -10,6 +10,7 @@ HomeChallenge
 
 
 
+#THE ANSWERS TO THE QUESTIONS:
 
 #1. How long did you spend on the test?
 
